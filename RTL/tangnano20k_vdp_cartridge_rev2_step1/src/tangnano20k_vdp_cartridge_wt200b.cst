@@ -1,0 +1,146 @@
+//Copyright (C)2014-2024 Gowin Semiconductor Corporation.
+//All rights reserved. 
+//File Title: Physical Constraints file
+//Tool Version: V1.9.10.03 (64-bit)
+//Part Number: GW2AR-LV18QN88C8/I7
+//Device: GW2AR-18
+//Device Version: C
+//Created Time: Thu 12 05 23:13:08 2024
+
+IO_LOC	"clk27m"		4;
+IO_LOC	"clk4m"		    76;                                             // IO_LOC	"clk14m"		80;
+IO_PORT	"clk27m"		IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_PORT	"clk4m"		    IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+                                                                        // IO_LOC	"slot_reset_n"	86;
+                                                                        // IO_LOC	"slot_iorq_n"	71;
+IO_LOC	"slot_rd_n"		15;                                             // IO_LOC	"slot_rd_n"		15;
+IO_LOC	"slot_wr_n"		16;                                             // IO_LOC	"slot_wr_n"		16;
+IO_LOC	"slot_wait"		42;                                             // IO_LOC	"slot_wait"		53;
+IO_LOC	"slot_intr"		73;                                             // IO_LOC	"slot_intr"		52;
+IO_LOC	"slot_data_dir"	52;                                             // IO_LOC	"slot_data_dir"	19;
+                                                                        // IO_PORT	"slot_reset_n"	IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+                                                                        // IO_PORT	"slot_iorq_n"	IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_PORT	"slot_rd_n"		IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_PORT	"slot_wr_n"		IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_PORT	"slot_wait"		IO_TYPE=LVTTL33 PULL_MODE=NONE BANK_VCCIO=3.3;  // external pull up on the WonderTANG!
+IO_PORT	"slot_intr"		IO_TYPE=LVTTL33 PULL_MODE=DOWN BANK_VCCIO=3.3;  // pull down for not asserting intr by default
+IO_PORT	"slot_data_dir"	IO_TYPE=LVTTL33 PULL_MODE=DOWN BANK_VCCIO=3.3;  // pull down to not disturb the data bus by default
+
+IO_LOC	"slot_busdir_n"	74;                                             // IO_LOC	"busdir"		72;
+                                                                        // IO_LOC	"oe_n"			20;
+IO_LOC	"dipsw"			51;                                             // IO_LOC	"dipsw"			18;
+IO_PORT	"slot_busdir_n"	IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+                                                                        // IO_PORT	"oe_n"			IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_PORT	"dipsw"			IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+                                                                        // IO_LOC	"slot_a[0]"		30;
+                                                                        // IO_LOC	"slot_a[1]"		31;
+                                                                        // IO_LOC	"slot_a[2]"		76;
+                                                                        // IO_LOC	"slot_a[3]"		42;
+                                                                        // IO_LOC	"slot_a[4]"		41;
+                                                                        // IO_LOC	"slot_a[5]"		48;
+                                                                        // IO_LOC	"slot_a[6]"		49;
+                                                                        // IO_LOC	"slot_a[7]"		17;
+                                                                        // IO_PORT	"slot_a[0]"		IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+                                                                        // IO_PORT	"slot_a[1]"		IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+                                                                        // IO_PORT	"slot_a[2]"		IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+                                                                        // IO_PORT	"slot_a[3]"		IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+                                                                        // IO_PORT	"slot_a[4]"		IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+                                                                        // IO_PORT	"slot_a[5]"		IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+                                                                        // IO_PORT	"slot_a[6]"		IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+                                                                        // IO_PORT	"slot_a[7]"		IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+IO_LOC	"buf_cs[0]"	    20;
+IO_LOC	"buf_cs[1]"	    17;
+IO_LOC	"buf_cs[2]"	    19;
+IO_PORT	"buf_cs[0]"	    IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_PORT	"buf_cs[1]"	    IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_PORT	"buf_cs[2]"	    IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+IO_LOC	"buf_d[0]"	    77;
+IO_LOC	"buf_d[1]"	    27;
+IO_LOC	"buf_d[2]"	    28;
+IO_LOC	"buf_d[3]"	    25;
+IO_LOC	"buf_d[4]"	    26;
+IO_LOC	"buf_d[5]"	    29;
+IO_LOC	"buf_d[6]"	    30;
+IO_LOC	"buf_d[7]"	    31;
+IO_PORT	"buf_d[0]"	    IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_PORT	"buf_d[1]"	    IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_PORT	"buf_d[2]"	    IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_PORT	"buf_d[3]"	    IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_PORT	"buf_d[4]"	    IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_PORT	"buf_d[5]"	    IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_PORT	"buf_d[6]"	    IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_PORT	"buf_d[7]"	    IO_TYPE=LVTTL33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+IO_LOC	"slot_d[0]"		48;                                             // IO_LOC	"slot_d[0]"		29;
+IO_LOC	"slot_d[1]"		41;                                             // IO_LOC	"slot_d[1]"		28;
+IO_LOC	"slot_d[2]"		86;                                             // IO_LOC	"slot_d[2]"		27;
+IO_LOC	"slot_d[3]"		79;                                             // IO_LOC	"slot_d[3]"		77;
+IO_LOC	"slot_d[4]"		72;                                             // IO_LOC	"slot_d[4]"		85;
+IO_LOC	"slot_d[5]"		71;                                             // IO_LOC	"slot_d[5]"		75;
+IO_LOC	"slot_d[6]"		53;                                             // IO_LOC	"slot_d[6]"		74;
+IO_LOC	"slot_d[7]"		49;                                             // IO_LOC	"slot_d[7]"		73;
+IO_PORT	"slot_d[0]"		IO_TYPE=LVTTL33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+IO_PORT	"slot_d[1]"		IO_TYPE=LVTTL33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+IO_PORT	"slot_d[2]"		IO_TYPE=LVTTL33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+IO_PORT	"slot_d[3]"		IO_TYPE=LVTTL33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+IO_PORT	"slot_d[4]"		IO_TYPE=LVTTL33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+IO_PORT	"slot_d[5]"		IO_TYPE=LVTTL33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+IO_PORT	"slot_d[6]"		IO_TYPE=LVTTL33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+IO_PORT	"slot_d[7]"		IO_TYPE=LVTTL33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+
+IO_LOC	"button[0]"		88;
+IO_LOC	"button[1]"		87;
+IO_PORT	"button[0]"		IO_TYPE=LVTTL33 PULL_MODE=DOWN BANK_VCCIO=3.3;
+IO_PORT	"button[1]"		IO_TYPE=LVTTL33 PULL_MODE=DOWN BANK_VCCIO=3.3;
+
+// IO_LOC	"ws2812_led"	79;
+// IO_PORT	"ws2812_led"	IO_TYPE=LVTTL33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+
+IO_LOC	"O_tmds_clk_p"	    33,34;
+IO_LOC	"O_tmds_data_p[0]"	35,36;
+IO_LOC	"O_tmds_data_p[1]"	37,38;
+IO_LOC	"O_tmds_data_p[2]"	39,40;
+IO_PORT	"O_tmds_clk_p"	    IO_TYPE=LVDS25 PULL_MODE=NONE DRIVE=3.5 BANK_VCCIO=3.3;
+IO_PORT	"O_tmds_data_p[0]"	IO_TYPE=LVDS25 PULL_MODE=NONE DRIVE=3.5 BANK_VCCIO=3.3;
+IO_PORT	"O_tmds_data_p[1]"	IO_TYPE=LVDS25 PULL_MODE=NONE DRIVE=3.5 BANK_VCCIO=3.3;
+IO_PORT	"O_tmds_data_p[2]"	IO_TYPE=LVDS25 PULL_MODE=NONE DRIVE=3.5 BANK_VCCIO=3.3;
+
+//	IO_LOC	"uart_tx"		69;
+//	IO_PORT	"uart_tx"		IO_TYPE=LVTTL33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+
+
+INS_LOC "u_msx_slot/u_reset_n/ff_pre_s2" R54C7;
+INS_LOC "u_msx_slot/u_ioreq_n/ff_pre_s2" R54C7;
+INS_LOC "u_msx_slot/u_addr_0/ff_pre_s1" R2C30;
+INS_LOC "u_msx_slot/u_addr_1/ff_pre_s1" R54C8;
+INS_LOC "u_msx_slot/u_addr_2/ff_pre_s1" R54C9;
+INS_LOC "u_msx_slot/u_addr_3/ff_pre_s1" R54C6;
+INS_LOC "u_msx_slot/u_addr_4/ff_pre_s1" R54C5;
+INS_LOC "u_msx_slot/u_addr_5/ff_pre_s1" R54C14;
+INS_LOC "u_msx_slot/u_addr_6/ff_pre_s1" R54C13;
+INS_LOC "u_msx_slot/u_addr_7/ff_pre_s1" R54C18;
+
+INS_LOC "u_msx_slot/u_reset_n/ff_out_s1" R54C7;
+INS_LOC "u_msx_slot/u_ioreq_n/ff_out_s1" R54C7;
+INS_LOC "u_msx_slot/u_addr_0/ff_out_s1" R2C30;
+INS_LOC "u_msx_slot/u_addr_1/ff_out_s1" R54C8;
+INS_LOC "u_msx_slot/u_addr_2/ff_out_s1" R54C9;
+INS_LOC "u_msx_slot/u_addr_3/ff_out_s1" R54C6;
+INS_LOC "u_msx_slot/u_addr_4/ff_out_s1" R54C5;
+INS_LOC "u_msx_slot/u_addr_5/ff_out_s1" R54C14;
+INS_LOC "u_msx_slot/u_addr_6/ff_out_s1" R54C13;
+INS_LOC "u_msx_slot/u_addr_7/ff_out_s1" R54C18;
+
+GROUP slot_addr_0={"u_msx_slot/u_addr_0/ff_pre_s1" "u_msx_slot/u_addr_0/ff_out_s1" "u_msx_slot/u_addr_0/n19_s1"};
+GROUP slot_addr_1={"u_msx_slot/u_addr_1/ff_pre_s1" "u_msx_slot/u_addr_1/ff_out_s1" "u_msx_slot/u_addr_1/n19_s1"};
+GROUP slot_addr_2={"u_msx_slot/u_addr_2/ff_pre_s1" "u_msx_slot/u_addr_2/ff_out_s1" "u_msx_slot/u_addr_2/n19_s1"};
+GROUP slot_addr_3={"u_msx_slot/u_addr_3/ff_pre_s1" "u_msx_slot/u_addr_3/ff_out_s1" "u_msx_slot/u_addr_3/n19_s1"};
+GROUP slot_addr_4={"u_msx_slot/u_addr_4/ff_pre_s1" "u_msx_slot/u_addr_4/ff_out_s1" "u_msx_slot/u_addr_4/n19_s1"};
+GROUP slot_addr_5={"u_msx_slot/u_addr_5/ff_pre_s1" "u_msx_slot/u_addr_5/ff_out_s1" "u_msx_slot/u_addr_5/n19_s1"};
+GROUP slot_addr_6={"u_msx_slot/u_addr_6/ff_pre_s1" "u_msx_slot/u_addr_6/ff_out_s1" "u_msx_slot/u_addr_6/n19_s1"};
+GROUP slot_addr_7={"u_msx_slot/u_addr_7/ff_pre_s1" "u_msx_slot/u_addr_7/ff_out_s1" "u_msx_slot/u_addr_7/n19_s1"};
+
