@@ -60,10 +60,10 @@ It also adapts the RTL to the pin mappings and the specific signal mux of the Wo
 > When the V9968 RTL is flashed to the WonderTANG! the cartridge acts just as a V9968 VDP without any other WonderTANG! original features enabled, so you cannot use the RAM mapper, SD card, MegaRAM SCC, FM or Sega VDP.
 
 - Copy the following files to a Nextor bootable mass storage unit (floppy or cartridge) all on the same directory:
-  - [DEVCON.COM](https://raw.githubusercontent.com/herraa1/wonder9968/tree/main/RTL/tangnano20k_vdp_cartridge_rev2_step1/src/th9958/devcon/DEVCON.COM)
-  - [BG.SC5](https://raw.githubusercontent.com/herraa1/wonder9968/tree/main/RTL/tangnano20k_vdp_cartridge_rev2_step1/src/th9958/devcon/bg.SC5)
-  - [FONT.BIN](https://raw.githubusercontent.com/herraa1/wonder9968/tree/main/RTL/tangnano20k_vdp_cartridge_rev2_step1/src/th9958/devcon/font.bin)
-  - [USA.SC5](https://raw.githubusercontent.com/herraa1/wonder9968/tree/main/RTL/tangnano20k_vdp_cartridge_rev2_step1/src/th9958/devcon/usa.SC5)
+  - [DEVCON.COM](https://raw.githubusercontent.com/herraa1/wonder9968/refs/heads/main/RTL/tangnano20k_vdp_cartridge_rev2_step1/src/th9958/devcon/DEVCON.COM)
+  - [BG.SC5](https://raw.githubusercontent.com/herraa1/wonder9968/refs/heads/main/RTL/tangnano20k_vdp_cartridge_rev2_step1/src/th9958/devcon/bg.SC5)
+  - [FONT.BIN](https://raw.githubusercontent.com/herraa1/wonder9968/refs/heads/main/RTL/tangnano20k_vdp_cartridge_rev2_step1/src/th9958/devcon/font.bin)
+  - [USA.SC5](https://raw.githubusercontent.com/herraa1/wonder9968/refs/heads/main/RTL/tangnano20k_vdp_cartridge_rev2_step1/src/th9958/devcon/usa.SC5)
 
 - Boot your MSX with the Nextor bootable mass storage unit
 
