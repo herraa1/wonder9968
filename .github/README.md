@@ -14,13 +14,16 @@ Finally, as a proof of concept, I have ported Shinobu Hashimoto's own port of th
 > This port is unsupported and it probably won't be updated, as the V9968 is still in development.
 
 > [!NOTE]
-> Successfully tested on a Tides Rider MSX2+
+> Successfully tested on a Tides Rider MSX2+, Panasonic FS-A1WSX and Omega MSX2+.
 
 ## Differences
 
 The V9968 port to the WonderTANG! uses the native 27MHz of the [Tang Nano 20K](https://wiki.sipeed.com/hardware/en/tang/tang-nano-20k/nano-20k.html) as a base clock to construct the rest of the cartridge clocks, including the base and sdram clock, and the DVI TX associated clocks. This improves the video quality, which experiences synchronization issues when using the cartridge clock as a base clock.
 
 It also adapts the RTL to the pin mappings and the specific signal mux of the WonderTANG! board versions 1.01c, 1.02d and 2.0b.
+
+This branch also modifies the state machine of the signal mux to align it with the behavior of the original tnCart RTL state machine, as the state machine of @buppu3 TangCartMSX for the tnCart board misses a state.
+With this change, the V9968 RTL on the WonterTANG! works too on other MSX machines that failed to run the original signal mux state machine code for the tnCart board.
 
 ## Flashing instructions
 
@@ -29,7 +32,7 @@ It also adapts the RTL to the pin mappings and the specific signal mux of the Wo
 
 ### WonderTANG 2.0b
 
-- Flash the bitstream [`tangnano20k_vdp_cartridge_wt200b.fs`](https://github.com/herraa1/wonder9968/raw/refs/heads/port-wondertang/RTL/tangnano20k_vdp_cartridge_rev2_step1/impl/pnr/tangnano20k_vdp_cartridge_wt200b.fs) into the Tang Nano 20k used in your WonderTANG board
+- Flash the bitstream [`tangnano20k_vdp_cartridge_wt200b.fs`](https://github.com/herraa1/wonder9968/raw/refs/heads/port-wondertang-r2/RTL/tangnano20k_vdp_cartridge_rev2_step1/impl/pnr/tangnano20k_vdp_cartridge_wt200b.fs) into the Tang Nano 20k used in your WonderTANG board
 
   ~~~Shell
   cd RTL/tangnano20k_vdp_cartridge_rev2_step1
@@ -38,7 +41,7 @@ It also adapts the RTL to the pin mappings and the specific signal mux of the Wo
 
 ### WonderTANG 1.02d
 
-- Flash the bitstream [`tangnano20k_vdp_cartridge_wt102d.fs`](https://github.com/herraa1/wonder9968/raw/refs/heads/port-wondertang/RTL/tangnano20k_vdp_cartridge_rev2_step1/impl/pnr/tangnano20k_vdp_cartridge_wt102d.fs) into the Tang Nano 20k used in your WonderTANG board
+- Flash the bitstream [`tangnano20k_vdp_cartridge_wt102d.fs`](https://github.com/herraa1/wonder9968/raw/refs/heads/port-wondertang-r2/RTL/tangnano20k_vdp_cartridge_rev2_step1/impl/pnr/tangnano20k_vdp_cartridge_wt102d.fs) into the Tang Nano 20k used in your WonderTANG board
 
   ~~~Shell
   cd RTL/tangnano20k_vdp_cartridge_rev2_step1
@@ -47,7 +50,7 @@ It also adapts the RTL to the pin mappings and the specific signal mux of the Wo
 
 ### WonderTANG 1.01c
 
-- Flash the bitstream [`tangnano20k_vdp_cartridge_wt101c.fs`](https://github.com/herraa1/wonder9968/raw/refs/heads/port-wondertang/RTL/tangnano20k_vdp_cartridge_rev2_step1/impl/pnr/tangnano20k_vdp_cartridge_wt101c.fs) into the Tang Nano 20k used in your WonderTANG board
+- Flash the bitstream [`tangnano20k_vdp_cartridge_wt101c.fs`](https://github.com/herraa1/wonder9968/raw/refs/heads/port-wondertang-r2/RTL/tangnano20k_vdp_cartridge_rev2_step1/impl/pnr/tangnano20k_vdp_cartridge_wt101c.fs) into the Tang Nano 20k used in your WonderTANG board
 
   ~~~Shell
   cd RTL/tangnano20k_vdp_cartridge_rev2_step1

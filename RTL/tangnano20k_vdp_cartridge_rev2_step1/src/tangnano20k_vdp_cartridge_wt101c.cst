@@ -112,8 +112,10 @@ IO_PORT	"O_tmds_data_p[2]"	IO_TYPE=LVDS25 PULL_MODE=NONE DRIVE=3.5 BANK_VCCIO=3.
 //	IO_LOC	"uart_tx"		69;
 //	IO_PORT	"uart_tx"		IO_TYPE=LVTTL33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
 
-INS_LOC "u_msx_slot/u_reset_n/ff_pre_s2" R54C7;
-INS_LOC "u_msx_slot/u_ioreq_n/ff_pre_s2" R54C7;
+//INS_LOC "u_msx_slot/u_reset_n/ff_pre_s2" R54C7;
+//INS_LOC "u_msx_slot/u_ioreq_n/ff_pre_s2" R54C7;
+INS_LOC "u_msx_slot/u_reset_n/ff_pre_s1" R54C7;
+INS_LOC "u_msx_slot/u_ioreq_n/ff_pre_s1" R54C7;
 INS_LOC "u_msx_slot/u_addr_0/ff_pre_s1" R2C30;
 INS_LOC "u_msx_slot/u_addr_1/ff_pre_s1" R54C8;
 INS_LOC "u_msx_slot/u_addr_2/ff_pre_s1" R54C9;

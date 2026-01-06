@@ -136,19 +136,19 @@ module msx_slot(
     reg [1:0] ff_buf_cs = 2'b10;
 
     always @( posedge clk ) begin
-        if( ff_state == 2'd0 ) begin
+        if( ff_state == 3'd0 ) begin
             if( w_start_cond ) begin
                 ff_buf_cs <= 2'b01;
             end
         end
-        else if( ff_state == 2'd3 ) begin
+        else if( ff_state == 3'd4 ) begin
             ff_buf_cs <= 2'b10;
         end
     end
 
     assign p_buf_cs[2] = ff_buf_cs[0];	// RESET, IOREQ
     assign p_buf_cs[1] = ff_buf_cs[1];	// A0~7
-    assign p_buf_cs[0] = 1'b1;			// A8~15
+    assign p_buf_cs[0] = 1'b1;			// A8~15 do not sample
 
 	// --------------------------------------------------------------------
 	//	スキャン開始条件
@@ -159,16 +159,16 @@ module msx_slot(
 	// --------------------------------------------------------------------
 	//	スキャン遷移状態
 	// --------------------------------------------------------------------
-    reg [1:0] ff_state = 2'd0;
+    reg [2:0] ff_state = 3'd0;
 
     always @( posedge clk ) begin
-        if( ff_state == 2'd0 ) begin
+        if( ff_state == 3'd0 ) begin
             if( w_start_cond ) begin
                 ff_state <= ff_state + 1'd1;
             end
         end
         else begin
-            ff_state <= ff_state + 1'd1;
+            ff_state <= (ff_state == 3'd4) ? 3'd0 : (ff_state + 1'd1);
         end
     end
 
@@ -176,8 +176,8 @@ module msx_slot(
 	//	信号入力
 	// --------------------------------------------------------------------
 	wire [1:0] w_ena;
-    assign w_ena[0] = (ff_state == 2'd0);
-    assign w_ena[1] = (ff_state == 2'd1) || (ff_state == 2'd2);
+    assign w_ena[0] = (ff_state == 3'd0);
+    assign w_ena[1] = (ff_state == 3'd2) || (ff_state == 3'd3);
 
 	wire w_slot_rd_n;
 	wire w_slot_wr_n;
@@ -205,7 +205,7 @@ module msx_slot(
 	reg ff_iorq_wr_pre = 1'b0;
 
     always @( posedge clk ) begin
-		if( ff_state == 2'd0 && w_start_cond ) begin
+		if( ff_state == 3'd0 && w_start_cond ) begin
 			ff_iorq_rd_pre	<= ~w_slot_rd_n & ~w_slot_ioreq_n;
             ff_iorq_wr_pre	<= ~w_slot_wr_n & ~w_slot_ioreq_n;
         end
@@ -221,12 +221,12 @@ module msx_slot(
 		else if( ff_initial_busy ) begin
 			//	hold
 		end
-		else if( ff_state == 2'd0 ) begin
+		else if( ff_state == 3'd0 ) begin
             if( w_slot_ioreq_n | w_slot_wr_n ) begin
                 ff_iorq_wr	<= 1'b0;
             end
         end
-        else if( ff_state == 2'd3 ) begin
+        else if( ff_state == 3'd4 ) begin
             ff_iorq_wr		<= ff_iorq_wr_pre;
         end
     end
@@ -238,12 +238,12 @@ module msx_slot(
 		else if( ff_initial_busy ) begin
 			//	hold
 		end
-		else if( ff_state == 2'd0 ) begin
+		else if( ff_state == 3'd0 ) begin
             if( w_slot_ioreq_n | w_slot_rd_n ) begin
                 ff_iorq_rd	<= 1'b0;
             end
         end
-        else if( ff_state == 2'd3 ) begin
+        else if( ff_state == 3'd4 ) begin
             ff_iorq_rd		<= ff_iorq_rd_pre;
         end
     end
@@ -252,7 +252,7 @@ module msx_slot(
 	//	スキャン開始時にデータは確定済み
 	// --------------------------------------------------------------------
 	always @( posedge clk ) begin
-		if( ff_state == 2'd0 && w_start_cond_wr ) begin
+		if( ff_state == 3'd0 && w_start_cond_wr ) begin
 			ff_slot_data		<= p_slot_data;
 		end
 	end
@@ -261,7 +261,7 @@ module msx_slot(
 	//	スキャン完了するまでアドレスは確定しない
 	// --------------------------------------------------------------------
 	always @( posedge clk ) begin
-		if( ff_state == 2'd3 ) begin
+		if( ff_state == 3'd4 ) begin
 			ff_slot_address		<= w_slot_address;
 		end
 	end
