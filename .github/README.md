@@ -29,7 +29,7 @@ It also adapts the RTL to the pin mappings and the specific signal mux of the Wo
 
 ### WonderTANG 2.0b
 
-- Flash the bitstream [`tangnano20k_vdp_cartridge_wt200b.fs`](https://raw.githubusercontent.com/herraa1/wonder9968/tree/port-wondertang/RTL/tangnano20k_vdp_cartridge_rev2_step1/impl/pnr/tangnano20k_vdp_cartridge_wt200b.fs) into the Tang Nano 20k used in your WonderTANG board
+- Flash the bitstream [`tangnano20k_vdp_cartridge_wt200b.fs`](https://github.com/herraa1/wonder9968/raw/refs/heads/port-wondertang/RTL/tangnano20k_vdp_cartridge_rev2_step1/impl/pnr/tangnano20k_vdp_cartridge_wt200b.fs) into the Tang Nano 20k used in your WonderTANG board
 
   ~~~Shell
   cd RTL/tangnano20k_vdp_cartridge_rev2_step1
@@ -38,7 +38,7 @@ It also adapts the RTL to the pin mappings and the specific signal mux of the Wo
 
 ### WonderTANG 1.02d
 
-- Flash the bitstream [`tangnano20k_vdp_cartridge_wt102d.fs`](https://raw.githubusercontent.com/herraa1/wonder9968/tree/port-wondertang/RTL/tangnano20k_vdp_cartridge_rev2_step1/impl/pnr/tangnano20k_vdp_cartridge_wt102d.fs) into the Tang Nano 20k used in your WonderTANG board
+- Flash the bitstream [`tangnano20k_vdp_cartridge_wt102d.fs`](https://github.com/herraa1/wonder9968/raw/refs/heads/port-wondertang/RTL/tangnano20k_vdp_cartridge_rev2_step1/impl/pnr/tangnano20k_vdp_cartridge_wt102d.fs) into the Tang Nano 20k used in your WonderTANG board
 
   ~~~Shell
   cd RTL/tangnano20k_vdp_cartridge_rev2_step1
@@ -47,7 +47,7 @@ It also adapts the RTL to the pin mappings and the specific signal mux of the Wo
 
 ### WonderTANG 1.01c
 
-- Flash the bitstream [`tangnano20k_vdp_cartridge_wt101c.fs`](https://raw.githubusercontent.com/herraa1/wonder9968/tree/port-wondertang/RTL/tangnano20k_vdp_cartridge_rev2_step1/impl/pnr/tangnano20k_vdp_cartridge_wt101c.fs) into the Tang Nano 20k used in your WonderTANG board
+- Flash the bitstream [`tangnano20k_vdp_cartridge_wt101c.fs`](https://github.com/herraa1/wonder9968/raw/refs/heads/port-wondertang/RTL/tangnano20k_vdp_cartridge_rev2_step1/impl/pnr/tangnano20k_vdp_cartridge_wt101c.fs) into the Tang Nano 20k used in your WonderTANG board
 
   ~~~Shell
   cd RTL/tangnano20k_vdp_cartridge_rev2_step1
