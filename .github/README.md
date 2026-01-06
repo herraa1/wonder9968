@@ -58,6 +58,9 @@ It also adapts the RTL to the pin mappings and the specific signal mux of the Wo
 
 > [!NOTE]
 > When the V9968 RTL is flashed to the WonderTANG! the cartridge acts just as a V9968 VDP without any other WonderTANG! original features enabled, so you cannot use the RAM mapper, SD card, MegaRAM SCC, FM or Sega VDP.
+>
+> The video output of the V9968 VDP comes out of the HDMI connector of the Tang Nano 20K in the WonderTANG! cartridge, not the MSX video connector.
+>
 
 - Copy the following files to a Nextor bootable mass storage unit (floppy or cartridge) all on the same directory:
   - [DEVCON.COM](https://raw.githubusercontent.com/herraa1/wonder9968/refs/heads/main/RTL/tangnano20k_vdp_cartridge_rev2_step1/src/th9958/devcon/DEVCON.COM)
