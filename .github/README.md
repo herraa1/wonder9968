@@ -14,7 +14,7 @@ Finally, as a proof of concept, I have ported Shinobu Hashimoto's own port of th
 > This port is unsupported and it probably won't be updated, as the V9968 is still in development.
 
 > [!NOTE]
-> Successfully tested on a Tides Rider MSX2+, Panasonic FS-A1WSX and Omega MSX2+.
+> Successfully tested on a Tides Rider MSX2+, Panasonic FS-A1WSX, Omega MSX2+, Philips VG-8235, Sony HB-501F and JFF TMSHAT.
 
 ## Differences
 
