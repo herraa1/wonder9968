@@ -18,12 +18,12 @@ Finally, as a proof of concept, I have ported Shinobu Hashimoto's own port of th
 
 ## Differences
 
-The V9968 port to the WonderTANG! uses the native 27MHz of the [Tang Nano 20K](https://wiki.sipeed.com/hardware/en/tang/tang-nano-20k/nano-20k.html) as a base clock to construct the rest of the cartridge clocks, including the base and sdram clock, and the DVI TX associated clocks. This improves the video quality, which experiences synchronization issues when using the cartridge clock as a base clock.
+The V9968 port to the WonderTANG! uses the native 27MHz of the [Tang Nano 20K](https://wiki.sipeed.com/hardware/en/tang/tang-nano-20k/nano-20k.html) as a source clock to construct the rest of the cartridge clocks, including the base and sdram clock, and the DVI TX associated clocks. This improves the video quality, which experiences synchronization issues when using the cartridge clock as a source clock.
 
 It also adapts the RTL to the pin mappings and the specific signal mux of the WonderTANG! board versions 1.01c, 1.02d and 2.0b.
 
 This branch also modifies the state machine of the signal mux to align it with the behavior of the original tnCart RTL state machine, as the state machine of @buppu3 TangCartMSX for the tnCart board misses a state.
-With this change, the V9968 RTL on the WonterTANG! works too on other MSX machines that failed to run the original signal mux state machine code for the tnCart board.
+With this change, the V9968 RTL on the WonterTANG! works too on other MSX machines that failed to run the original signal mux state machine code for the TangCartMSX on the tnCart board.
 
 ## Flashing instructions
 
