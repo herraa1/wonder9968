@@ -6,7 +6,7 @@ This is a proof of concept instantiation of the V9968 RTL by Takayuki Hara (HRA!
 
 [Shinobu Hashimoto](https://github.com/buppu3) has ported the RTL of the V9968 to his own [tnCart](https://github.com/buppu3/tnCart) board, which is very similar to the [WonderTANG!](https://github.com/lfantoniosi/WonderTANG) board by [Luis Felipe Antoniosi](https://github.com/lfantoniosi).
 
-Finally, as a proof of concept, I have ported Shinobu Hashimoto's own port of the V9968 to the widely available WonderTANG! to be able to have a quick glimpse of the V9968 capabilities as demonstrated in the [DEVCON 14](https://www.youtube.com/watch?v=wa1pjfsbObI&t=22m30s), without the need to build HRA!'s V9968 prototype board nor the tnCart.
+Finally, as a proof of concept, I (Albert Herranz) have ported Shinobu Hashimoto's own port of the V9968 to the widely available WonderTANG! to be able to have a quick glimpse of the V9968 capabilities as demonstrated in the [DEVCON 14](https://www.youtube.com/watch?v=wa1pjfsbObI&t=22m30s), without the need to build HRA!'s V9968 prototype board nor the tnCart.
 
 > [!WARNING]
 > This is just a proof of concept, use at your own risk.
@@ -15,6 +15,12 @@ Finally, as a proof of concept, I have ported Shinobu Hashimoto's own port of th
 
 > [!NOTE]
 > Successfully tested on a Tides Rider MSX2+, Panasonic FS-A1WSX, Omega MSX2+, Philips VG-8235, Sony HB-501F and JFF TMSHAT.
+
+> [!CAUTION]
+> Please, *DO NOT* use modified wonder9968 RTLs with ports 98h/99h on your MSX unless you first physically deactivate your MSX internal VDP (i.e remove it or force it to ignore IO reads/writes from/to 98h/99h if it must be kept connected).
+>
+> Otherwise, you risk damaging your MSX and/or your WonderTANG!
+> You've been warned!
 
 ## Differences
 
